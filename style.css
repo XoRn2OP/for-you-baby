@@ -463,6 +463,32 @@ body {
     transform: translateX(-50%) rotate(-5deg);
 }
 
+/* CHAPTER 9 STICKY NOTE FIX */
+
+.chapter:has(.photo-gallery) .decor-note {
+    z-index: 3;
+}
+
+/* Position sticky notes outside the gallery */
+
+.chapter:has(.photo-gallery) .decor-note.left {
+    left: max(3%, calc(50% - 700px));
+    top: 30%;
+}
+
+.chapter:has(.photo-gallery) .decor-note.right {
+    right: max(3%, calc(50% - 700px));
+    bottom: 25%;
+}
+
+/* Hide sticky notes if the screen is not wide enough */
+
+@media (max-width: 1360px) {
+    .chapter:has(.photo-gallery) .decor-note {
+        display: none;
+    }
+}
+
 /* PHOTO LIGHTBOX */
 
 .photo-lightbox {
